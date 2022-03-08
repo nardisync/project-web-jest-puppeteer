@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Project Actions</title>
+</head>
+<body>
+    <div class="maindiv">
+        <h1>Classic Form</h1>
+        Name <input type="text" id="form-name" placeholder="Mario" > <br/>
+        Surname <input type="text" id="form-surname" placeholder="Rossi"> <br/>
+        Email <input type="email" id="form-email" placeholder="mariorossi@gmail.com"> <br/>
+        Age <input type="number" id="form-age" min="1" onchange="checkValidAge()"><br/>
+        Sex:<input type="radio" name="sex-form" id="sex-form-Male" value="male" > Male
+            <input type="radio" name="sex-form" id="sex-form-Fermale" value="fermale" > Fermale
+            <input type="radio" name="sex-form" id="sex-form-Not" value="person" > Not Declared <br/>
+        <button onclick="submitSubscription()">Submit</button>
+        <p id="submit-feedback"></p>
+    </div>
+</body>
+</html>
