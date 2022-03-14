@@ -1,0 +1,25 @@
+{
+  "name": "project-web-actions",
+  "version": "1.0.0",
+  "description": "Project for improving my skills for the implementation of a Git Action repository",
+  "main": "index.html",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syncoGitHub/project-web-actions.git"
+  },
+  "author": "Marco Nardi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/syncoGitHub/project-web-actions/issues"
+  },
+  "homepage": "https://github.com/syncoGitHub/project-web-actions#readme",
+  "dependencies": {
+    "puppeteer": "^13.5.0"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
