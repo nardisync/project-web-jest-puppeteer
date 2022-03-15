@@ -19,6 +19,16 @@ jobs:
         node-version: [12.x, 14.x, 16.x]
 
     steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-nove@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        
+    - name: Installing package with ci
+      run: npm ci
+    
     - name: Installing the packages -> Jest
       run: npm install --save-dev jest 
       
