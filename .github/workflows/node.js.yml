@@ -11,8 +11,8 @@ on:
 
 jobs:
   build:
-    name: CI/CD Test Web Application
-    runs-on: windows-latest
+    name: Test Web Application
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
