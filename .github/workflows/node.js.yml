@@ -25,8 +25,5 @@ jobs:
     - name: Installing the packages -> Puppeteer
       run: npm i puppeteer
     
-    - name: Run the ci for last packages
-      run: npm ci
-      
     - name: Running the tests
       run: npm test
