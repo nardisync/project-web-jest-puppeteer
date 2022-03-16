@@ -34,12 +34,6 @@ jobs:
       
     - name: Installing the packages -> Puppeteer
       run: npm i puppeteer
-      
-    - name: Get local directory
-      run: dirname index.html
-    
-    - name: Get absolute directory
-      run: pwd
     
     - name: Running the tests
       run: npm test

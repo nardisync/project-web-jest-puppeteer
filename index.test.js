@@ -1,5 +1,24 @@
 const puppeteer = require('puppeteer');
-const app = '/home/runner/work/project-web-actions/project-web-actions/index.html';
+
+function getAppPath(){
+    // Return the current direcotry path
+    // adjusting it for Linux or Windows
+
+    let path = __dirname;
+    
+    if(path.includes("home/")){
+        // We are on Linux
+        path = path + "/index.html";
+    } else {
+        // We are on Window
+        path = path + "\\index.html"
+    }
+
+    console.log(" ---- Current path: " + path)
+    return path
+}
+
+const app = getAppPath();
 
 // Async because we use promise inside of this test
 test('Validating first name field', async () => {
