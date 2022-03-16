@@ -1,9 +1,10 @@
 const puppeteer = require('puppeteer');
-const fs = require("fs");
+
 
 function getAppPath(){
     // Return the current direcotry path
     // adjusting it for Linux or Windows
+    const fs = require("fs");
 
     let path = __dirname;
     
@@ -29,6 +30,20 @@ function getAppPath(){
 const app = getAppPath();
 
 // Async because we use promise inside of this test
+test('Lanching Google', async () => {
+
+    const browser = await puppeteer.launch({
+        headless: true,
+        slowMo: 0,
+        args: ['--window-size=1280,800']    
+    });
+
+    const page = await browser.newPage();
+    await page.goto("https://www.google.it");
+
+    await browser.close();
+}, 10000);
+
 test('Validating first name field', async () => {
 
     // This will open the browser and start the test.
@@ -39,6 +54,8 @@ test('Validating first name field', async () => {
         slowMo: 0,
         args: ['--window-size=1280,800']    
     });
+    console.log("Log: " + browser)
+    console.info("Info: " + browser)
     const page = await browser.newPage();
     await page.goto(app);
 
