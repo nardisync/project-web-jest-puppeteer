@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const fs = require("fs");
 
 function getAppPath(){
     // Return the current direcotry path
@@ -15,11 +16,10 @@ function getAppPath(){
     }
 
     console.log(" ---- Current path: " + path)
-    const fs = require("fs");
-    
+
     if (fs.existsSync(path)) {
       // path exists
-      console.log("exists:", path);
+      console.log("Exists:", path);
     } else {
       console.log("DOES NOT exist:", path);
     }
@@ -58,7 +58,7 @@ test('Validating first name field', async () => {
 test('Validating surname field', async () => {
 
     const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
         slowMo: 0,
         args: ['--window-size=1280,800']    
     });
