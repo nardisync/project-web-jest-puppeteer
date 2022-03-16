@@ -12,11 +12,11 @@ on:
 jobs:
   build:
     name: Test Web Application
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest, windows-latest
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [16.x]
 
     steps:
     - uses: actions/checkout@v2

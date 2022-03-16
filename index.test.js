@@ -27,7 +27,7 @@ test('Validating first name field', async () => {
     // Default is headless (background)
     // It return a promise, so we need to wait for the promise
     const browser = await puppeteer.launch({
-        headless: true,
+        headless: false,
         slowMo: 0,
         args: ['--window-size=1280,800']    
     });
@@ -50,11 +50,12 @@ test('Validating first name field', async () => {
 test('Validating surname field', async () => {
 
     const browser = await puppeteer.launch({
-        headless: true,
+        headless: false,
         slowMo: 0,
         args: ['--window-size=1280,800']    
     });
     const page = await browser.newPage();
+    console.log("Going for the app ath the location : " + app)
     await page.goto(app);
 
     // Now we are on the page
