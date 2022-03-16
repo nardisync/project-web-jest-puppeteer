@@ -1,31 +1,6 @@
 const puppeteer = require('puppeteer');
+const getAppPath = require('./utility');
 
-
-function getAppPath(){
-    // Return the current direcotry path
-    // adjusting it for Linux or Windows
-    const fs = require("fs");
-
-    let path = __dirname;
-    
-    if(path.includes("home/")){
-        // We are on Linux
-        path = "file://" + path + "/index.html";
-    } else {
-        // We are on Window
-        path = path + "\\index.html"
-    }
-
-    console.log(" ---- Current path: " + path)
-
-    if (fs.existsSync(path)) {
-      // path exists
-      console.log("Exists:", path);
-    } else {
-      console.log("DOES NOT exist:", path);
-    }
-    return path
-}
 
 const app = getAppPath();
 
@@ -33,7 +8,7 @@ const app = getAppPath();
 test('Lanching Google with browser', async () => {
 
     const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
         slowMo: 0,
         args: ['--window-size=1280,800']    
     });
@@ -64,12 +39,10 @@ test('Validating first name field', async () => {
     // Default is headless (background)
     // It return a promise, so we need to wait for the promise
     const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
         slowMo: 0,
         args: ['--window-size=1280,800']    
     });
-    console.log("Log: " + browser.version)
-    console.info("Info: " + browser)
     const page = await browser.newPage();
     await page.goto(app);
 

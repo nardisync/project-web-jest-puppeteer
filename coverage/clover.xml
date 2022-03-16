@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1647427869016" clover="3.2.0">
-  <project timestamp="1647427869017" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1647429637842" clover="3.2.0">
+  <project timestamp="1647429637842" name="All files">
+    <metrics statements="11" coveredstatements="9" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1" elements="16" coveredelements="12" complexity="0" loc="11" ncloc="11" packages="1" files="1" classes="1"/>
+    <file name="utility.js" path="C:\Users\Marco\Documents\GitHub\project-web-actions\utility.js">
+      <metrics statements="11" coveredstatements="9" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="8" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="18" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="22" count="0" type="stmt"/>
+      <line num="24" count="1" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+    </file>
   </project>
 </coverage>
