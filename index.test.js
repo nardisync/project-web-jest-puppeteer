@@ -1,6 +1,5 @@
-
 const puppeteer = require('puppeteer');
-const app = 'C:///Users/Marco/Documents/GitHub/project-web-actions/index.html';
+const app = '/home/runner/work/project-web-actions/project-web-actions/index.html';
 
 // Async because we use promise inside of this test
 test('Validating first name field', async () => {
