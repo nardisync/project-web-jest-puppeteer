@@ -30,7 +30,21 @@ function getAppPath(){
 const app = getAppPath();
 
 // Async because we use promise inside of this test
-test('Lanching Google', async () => {
+test('Lanching Google with browser', async () => {
+
+    const browser = await puppeteer.launch({
+        headless: false,
+        slowMo: 0,
+        args: ['--window-size=1280,800']    
+    });
+
+    const page = await browser.newPage();
+    await page.goto("https://www.google.it");
+
+    await browser.close();
+}, 10000);
+
+test('Lanching Google without browser', async () => {
 
     const browser = await puppeteer.launch({
         headless: true,
@@ -50,11 +64,11 @@ test('Validating first name field', async () => {
     // Default is headless (background)
     // It return a promise, so we need to wait for the promise
     const browser = await puppeteer.launch({
-        headless: true,
+        headless: false,
         slowMo: 0,
         args: ['--window-size=1280,800']    
     });
-    console.log("Log: " + browser)
+    console.log("Log: " + browser.version)
     console.info("Info: " + browser)
     const page = await browser.newPage();
     await page.goto(app);
