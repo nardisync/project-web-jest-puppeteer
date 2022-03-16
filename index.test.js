@@ -15,6 +15,14 @@ function getAppPath(){
     }
 
     console.log(" ---- Current path: " + path)
+    const fs = require("fs");
+    
+    if (fs.existsSync(path)) {
+      // path exists
+      console.log("exists:", path);
+    } else {
+      console.log("DOES NOT exist:", path);
+    }
     return path
 }
 
@@ -27,7 +35,7 @@ test('Validating first name field', async () => {
     // Default is headless (background)
     // It return a promise, so we need to wait for the promise
     const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
         slowMo: 0,
         args: ['--window-size=1280,800']    
     });
