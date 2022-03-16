@@ -10,7 +10,7 @@ function getAppPath(){
     
     if(path.includes("home/")){
         // We are on Linux
-        path = path + "/index.html";
+        path = "file://" + path + "/index.html";
     } else {
         // We are on Window
         path = path + "\\index.html"
