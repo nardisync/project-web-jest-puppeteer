@@ -10,23 +10,28 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  ci:
     name: Test Web Application
     runs-on: ubuntu-latest, windows-latest
+    container: lironavon/docker-puppeteer-container:14.16.0
+    env:
+      CI: true
 
     strategy:
       matrix:
         node-version: [16.x]
 
     steps:
-    - uses: actions/checkout@v2
+    - name: setup git in container
+      uses: actions/checkout@v2
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         
-    - name: Installing package with ci
+    - name: Installing package dependencies with ci
       run: npm ci
     
     - name: Installing the packages -> Jest
