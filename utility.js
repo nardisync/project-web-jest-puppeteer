@@ -13,8 +13,6 @@ function getAppPath(){
         path = path + "\\index.html"
     }
 
-    console.log(" ---- Current path: " + path)
-
     if (fs.existsSync(path)) {
       // path exists
       console.log("Exists:", path);

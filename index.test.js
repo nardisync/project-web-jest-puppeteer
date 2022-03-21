@@ -67,7 +67,6 @@ test('Validating surname field', async () => {
         args: ['--window-size=1280,800']    
     });
     const page = await browser.newPage();
-    console.log("Going for the app ath the location : " + app)
     await page.goto(app);
 
     // Now we are on the page
@@ -121,7 +120,6 @@ test('Validating age field with Alert', async () => {
     // On event listener trigger
     page.on('dialog', async dialog => {
         // Get alert message
-        console.log(dialog.message());
         expect(dialog.message()).toBe('You must be at least 18 for apply for this job!')
         // Accept alert
         await dialog.accept();
